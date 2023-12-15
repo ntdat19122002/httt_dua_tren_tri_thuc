@@ -1,0 +1,15 @@
+PART 1. Dữ liệu
+  1) Tập luật
+    R1: S02->D01
+
+  2) Triệu chứng người dùng mắc phải
+    S07, S17, S13, S12, S12, S21, S12, S21, S12, S21.
+
+  3) Bệnh nghi ngờ
+    D04.
+
+PART 2. Suy diễn
+  1) Goal D04. Không có luật nào để suy diễn/không có triệu chứng này ban đầu. Trả về thất bại.
+
+PART 3. Kết quả
+  1) Goal D04 không được chứng minh.
