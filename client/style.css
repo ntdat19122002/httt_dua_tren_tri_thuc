@@ -127,7 +127,9 @@ body {
   height: 60%;
   object-fit: contain;
 }
-
+.wrap{
+  white-space: pre-wrap;
+}
 .message {
   flex: 1;
 

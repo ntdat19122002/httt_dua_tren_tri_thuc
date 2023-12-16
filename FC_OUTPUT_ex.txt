@@ -28,7 +28,7 @@ PART 1. Dữ liệu (Luật)
     R26: mot cai gi do
     R27: mot cai gi do
 
-  2) Facts S07, S17, S13, S12, S12, S21, S12, S21, S12, S21.
+  2) Facts S07, S17, S13.
 
   3) Goal None
 
@@ -43,59 +43,25 @@ PART 2. Suy Diễn
     R7:S08->D02 Không được áp dụng, vì thiếu fact: S08
     R8:S09->D03 Không được áp dụng, vì thiếu fact: S09
     R9:S10->D04 Không được áp dụng, vì thiếu fact: S10
-    R10:S12->D04 được áp dụng. Cập nhật flag1. Facts S07, S17, S13, S12, S12, S21, S12, S21, S12, S21 suy ra D04.
-
-  2 ITERATION
-    R1:S01->D01 Không được áp dụng, vì thiếu fact: S01
-    R2:S01->D04 không áp dụng, vì D04 nắm trong số các facts. Cập nhật flag2.
-    R3:S02->D01 Không được áp dụng, vì thiếu fact: S02
-    R4:S03->D01 Không được áp dụng, vì thiếu fact: S03
-    R5:S04->D04 không áp dụng, vì D04 nắm trong số các facts. Cập nhật flag2.
-    R6:S05->D02 Không được áp dụng, vì thiếu fact: S05
-    R7:S08->D02 Không được áp dụng, vì thiếu fact: S08
-    R8:S09->D03 Không được áp dụng, vì thiếu fact: S09
-    R9:S10->D04 không áp dụng, vì D04 nắm trong số các facts. Cập nhật flag2.
-    R10:S12->D04 bỏ qua, vì flag1 đã được cập nhật.
-    R11:S14->D04 không áp dụng, vì D04 nắm trong số các facts. Cập nhật flag2.
+    R10:S12->D04 Không được áp dụng, vì thiếu fact: S12
+    R11:S14->D04 Không được áp dụng, vì thiếu fact: S14
     R12:S15->D01 Không được áp dụng, vì thiếu fact: S15
-    R13:S16->D04 không áp dụng, vì D04 nắm trong số các facts. Cập nhật flag2.
-    R14:S15->D02 Không được áp dụng, vì thiếu fact: S15
-    R15:S15->D03 Không được áp dụng, vì thiếu fact: S15
+    R13:S15->D02 Không được áp dụng, vì thiếu fact: S15
+    R14:S15->D03 Không được áp dụng, vì thiếu fact: S15
+    R15:S16->D04 Không được áp dụng, vì thiếu fact: S16
     R16:S19->D01 Không được áp dụng, vì thiếu fact: S19
     R17:S19->D03 Không được áp dụng, vì thiếu fact: S19
-    R18:S19->D04 không áp dụng, vì D04 nắm trong số các facts. Cập nhật flag2.
-    R19:S20->D04 không áp dụng, vì D04 nắm trong số các facts. Cập nhật flag2.
-    R20:S21->D02 được áp dụng. Cập nhật flag1. Facts S07, S17, S13, S12, S12, S21, S12, S21, S12, S21 suy ra D04, D02.
-
-  3 ITERATION
-    R1:S01->D01 Không được áp dụng, vì thiếu fact: S01
-    R2:S01->D04 bỏ qua, vì flag2 đã được cập nhật.
-    R3:S02->D01 Không được áp dụng, vì thiếu fact: S02
-    R4:S03->D01 Không được áp dụng, vì thiếu fact: S03
-    R5:S04->D04 bỏ qua, vì flag2 đã được cập nhật.
-    R6:S05->D02 không áp dụng, vì D02 nắm trong số các facts. Cập nhật flag2.
-    R7:S08->D02 không áp dụng, vì D02 nắm trong số các facts. Cập nhật flag2.
-    R8:S09->D03 Không được áp dụng, vì thiếu fact: S09
-    R9:S10->D04 bỏ qua, vì flag2 đã được cập nhật.
-    R10:S12->D04 bỏ qua, vì flag1 đã được cập nhật.
-    R11:S14->D04 bỏ qua, vì flag2 đã được cập nhật.
-    R12:S15->D01 Không được áp dụng, vì thiếu fact: S15
-    R13:S16->D04 bỏ qua, vì flag2 đã được cập nhật.
-    R14:S15->D02 không áp dụng, vì D02 nắm trong số các facts. Cập nhật flag2.
-    R15:S15->D03 Không được áp dụng, vì thiếu fact: S15
-    R16:S19->D01 Không được áp dụng, vì thiếu fact: S19
-    R17:S19->D03 Không được áp dụng, vì thiếu fact: S19
-    R18:S19->D04 bỏ qua, vì flag2 đã được cập nhật.
-    R19:S20->D04 bỏ qua, vì flag2 đã được cập nhật.
-    R20:S21->D02 bỏ qua, vì flag1 đã được cập nhật.
+    R18:S19->D04 Không được áp dụng, vì thiếu fact: S19
+    R19:S20->D04 Không được áp dụng, vì thiếu fact: S20
+    R20:S21->D02 Không được áp dụng, vì thiếu fact: S21
     R21:S23->D01 Không được áp dụng, vì thiếu fact: S23
-    R22:S23->D04 không áp dụng, vì D04 nắm trong số các facts. Cập nhật flag2.
-    R23:S24->D02 không áp dụng, vì D02 nắm trong số các facts. Cập nhật flag2.
-    R24:S25->D02 không áp dụng, vì D02 nắm trong số các facts. Cập nhật flag2.
+    R22:S23->D04 Không được áp dụng, vì thiếu fact: S23
+    R23:S24->D02 Không được áp dụng, vì thiếu fact: S24
+    R24:S25->D02 Không được áp dụng, vì thiếu fact: S25
     R25:S25->D03 Không được áp dụng, vì thiếu fact: S25
     R26:S26->D03 Không được áp dụng, vì thiếu fact: S26
     R27:S27->D03 Không được áp dụng, vì thiếu fact: S27
 
 PART 3. Kết quả
-  1) Kết quả là : S07, S17, S13, S12, S12, S21, S12, S21, S12, S21, D04, D02 .
-  2) Đường đi suy diễn được là:R10, R20
+  1) Kết quả là : S07, S17, S13 .
+  2) Đường đi suy diễn được là:
