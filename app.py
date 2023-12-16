@@ -42,6 +42,10 @@ def question1():
 def question2():
     return tra_ve_tt_cho_fe(['S08','S10','S03', 'S05', 'S16', 'S12', 'S21', 'S17'], 'addTt2', 'reply2')
 
+@app.route("/question3")
+def question3():
+    return tra_ve_tt_cho_fe(['S09','S11','S02', 'S06', 'S17', 'S14', 'S23', 'S19'], 'addTt2', 'reply2')
+
 
 @app.route("/forward_chaining", methods=['POST'])
 def tien_hanh_forward_chaining():

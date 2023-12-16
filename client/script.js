@@ -184,6 +184,69 @@ const reply1 = async () => {
     }
 }
 
+const reply3  = async () =>  {
+    trieuChung = trieuChung.concat(trieuChung2)
+    const response = await fetch('http://127.0.0.1:5000/forward_chaining', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            tt: trieuChung
+        })
+    })
+
+    const data = await response.json();
+    let message = ''
+    if (data.length > 1) {
+        message += 'Dự đoan bạn có thể mắc 1 trong cái loại bệnh cúm sau: '
+        for (let benh of data) {
+            message += benh['tenBenh'] + ','
+        }
+        let list_predicted_disease = []
+        for (let i of data) {
+            list_predicted_disease.push(i['idbenh'])
+        }
+        const responseBw = await fetch('http://127.0.0.1:5000/backward_chaining', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                tt: trieuChung,
+                list_predicted_disease: list_predicted_disease
+            })
+        })
+        let benh_chuan = await responseBw.json()
+        message += `. Khả năng cao hơn bạn sẽ mắc bênh ${benh_chuan['benh']['tenBenh']}. Bạn nên làm theo lời khuyên sau: \n ${benh_chuan['benh']['loikhuyen']}
+            Bạn có muốn nhận thêm thông tin về email, hãy nhập email của bạn.`
+        statusApp = 'guiEmail'
+        id_benh = benh_chuan['benh']['idbenh']
+        init_message(message)
+        console.log(benh_chuan)
+    } else if (data.length == 1) {
+        init_message('Bạn bị mắc bệnh cúm ' + data[0]['tenBenh'] + '. Bạn nên làm theo lời khuyên sau: \n' + data[0]['loikhuyen']
+            + 'Bạn có muốn nhận thêm thông tin về email, hãy nhập email của bạn.')
+        statusApp = 'guiEmail'
+        id_benh = data[0]['idbenh']
+    } else {
+        init_message('Bạn không có bị ốm đâu. Chỉ hơi ổm chút xíu thôi, đừng lo nha.')
+    }
+}
+
+const make3 = async () =>  {
+
+    const response = await fetch('http://127.0.0.1:5000/question3')
+    const data = await response.json();
+    init_message(`${ten} cung cấp thêm thông tin để mình đưa ra được kết quả chính xác nhất nhé?`,
+        data,
+        [{
+            id: 'reply3',
+            function: 'reply3()',
+            message: 'Tôi không cảm thấy triệu chứng nào như trên 😄'
+        }]);
+}
+
 const reply2 = async () => {
     trieuChung = trieuChung.concat(trieuChung2)
     const response = await fetch('http://127.0.0.1:5000/forward_chaining', {
@@ -230,9 +293,11 @@ const reply2 = async () => {
         statusApp = 'guiEmail'
         id_benh = data[0]['idbenh']
     } else {
-        init_message('Vậy bạn không có bị cúm đâu, chỉ hơi sốt chút xíu thôi.')
+        make3()
     }
 }
+
+
 const timBenh = async () => {
     const response = await fetch('http://127.0.0.1:5000/question1 ')
 
